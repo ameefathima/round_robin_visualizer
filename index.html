@@ -59,4 +59,6 @@ function advance(n){clock=Math.max(0,Math.min(sim.finish,clock+n));render()}
 $('add').onclick=()=>{if(base.length>=8)return alert('Maximum 8 processes.');base.push({id:'P'+(base.length+1),at:0,bt:3});drawInputs()};
 $('run').onclick=build;$('next').onclick=()=>advance(1);$('prev').onclick=()=>advance(-1);$('reset').onclick=()=>{stop();clock=0;render()};$('play').onclick=()=>{if(timer){stop();return}if(!sim)build();if(clock>=sim.finish)clock=0;$('play').textContent='Ⅱ Pause';timer=setInterval(()=>{if(clock>=sim.finish){stop();return}advance(1);if(clock>=sim.finish)stop()},+$('speed').value)};
 drawInputs();build();
-</script></body></html>
+</script>
+</body>
+</html>
